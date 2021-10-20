@@ -59,7 +59,7 @@ $faq = [
         <!-- google fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <!-- /google fonts -->
         <link rel="stylesheet" href="style.css">
         <title>Google FAQ</title>
@@ -67,38 +67,45 @@ $faq = [
     <body>
         <!-- header with logo and navbar -->
         <header>
-            <h1>Privacy e termini</h1>
+            <div class="title_box">
+                <img src="./img/googlelogo_clr_74x24px.svg" alt="Google logo">
+                <h2>Privacy e termini</h2>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#">Introduzione</a></li>
                     <li><a href="#">Norme sulla privacy</a></li>
                     <li><a href="#">Termini di servizio</a></li>
                     <li><a href="#">Tecnologie</a></li>
-                    <li><a href="#">Domande frequenti</a></li>
+                    <li class="active"><a href="#">Domande frequenti</a></li>
                 </ul>
             </nav>
         </header>
         <!-- /header with logo and navbar -->
         <!-- main with questions -->
-        <main>
+        <main class="container">
             <?php foreach($faq as $element) {?>
-                <h2><?= $element['question']; ?></h2>
-                <p><? echo str_replace(".\r", ".<br><br>", $element['answer']); ?></p>
+                <section>
+                    <h2><?= $element['question']; ?></h2>
+                    <p><? echo str_replace(".\r", ".<br><br>", $element['answer']); ?></p>
+                </section>
             <?php };?>
         </main>
         <!-- /main with questions -->
         <!-- footer with select -->
         <footer>
-            <ul>
-                <li><a href="#">Google</a></li>
-                <li><a href="#">Tutto su Google</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Termini</a></li>
-            </ul>
-
-            <select name="language" id="lang">
-                <option value="it-IT">Italiano</option>
-            </select>
+            <div class="container">
+                <ul>
+                    <li><a href="#">Google</a></li>
+                    <li><a href="#">Tutto su Google</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Termini</a></li>
+                </ul>
+    
+                <select name="language" id="lang">
+                    <option value="it-IT">Italiano</option>
+                </select>
+            </div>
         </footer>
         <!-- /footer with select -->
     </body>
