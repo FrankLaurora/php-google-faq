@@ -87,7 +87,7 @@ $faq = [
             <?php foreach($faq as $element) {?>
                 <section>
                     <h2><?= $element['question']; ?></h2>
-                    <p><? echo str_replace(".\r", ".</p><p>", $element['answer']); ?></p>
+                    <p><? echo str_replace('.\r', '.</p><p>', $element['answer']); ?></p>
                 </section>
             <?php };?>
         </main>
